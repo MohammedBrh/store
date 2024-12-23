@@ -1,12 +1,17 @@
 <div class="main">
     <div class="body">
         <div *ngFor="let item of items" class="item">
-            <div class="elment">
+            <div class="elment" (click)="viewArticleById(item.id)">
                 <div class="image"><img src="{{item.image}}" alt=""></div>
                 <div class="title"> <b>{{item.name}}</b></div>
                 <div class="description"> {{item.description}}</div>
                 <div> <button (click)="Add(item.id)">Add</button></div>
             </div>
+        </div>
+
+        <div>
+            <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="arrayOptions" aria-label="Select page" (page)="onPageChange($event)">
+            </mat-paginator>
         </div>
     </div>
 </div>

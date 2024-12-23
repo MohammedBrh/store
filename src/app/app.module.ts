@@ -10,8 +10,9 @@ import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { RouterModule, Routes } from '@angular/router';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ArticleComponent } from './article/article.component';
 
 
 
@@ -22,14 +23,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     CartComponent,
     ContactComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

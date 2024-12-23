@@ -1,0 +1,13 @@
+<div class="main">
+    <!-- <div class="img-article"> -->
+        <div class="image"><img src="{{item.image}}" alt=""></div>
+    <!-- </div> -->
+    <div class="info">
+        <div class="title"> {{item.name}}</div>
+        <div class="description"> {{item.description}}</div>
+        <div class="actions">
+            <div class="rate"> {{item.rating}}</div>
+            <div class="add"> <button (click)="Add(item.id)">Add</button></div>
+        </div>
+    </div>
+</div>
