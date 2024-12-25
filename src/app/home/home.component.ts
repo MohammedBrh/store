@@ -37,7 +37,7 @@ export class HomeComponent {
   }
 
   viewArticleById(id: number): void {
-    // debugger
-    // this.router.navigate(['/article', id]); // Navigate to the article details page
+    debugger
+    this.router.navigate(['/article', id]); // Navigate to the article details page
   }
 }

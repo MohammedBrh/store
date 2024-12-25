@@ -13,6 +13,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
+import { AddCurrencyDirective } from 'src/directives/add-currency.directive';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -24,7 +27,8 @@ import { ArticleComponent } from './article/article.component';
     CartComponent,
     ContactComponent,
     SnackBarComponent,
-    ArticleComponent
+    ArticleComponent,
+    AddCurrencyDirective
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { ArticleComponent } from './article/article.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    BrowserAnimationsModule, // Required for Angular Material animations
+    MatIconModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

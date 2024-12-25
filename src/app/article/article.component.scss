@@ -1,44 +1,89 @@
 .main {
     display: flex;
     flex-direction: row;
-    height: 60%;
+    justify-content: center;
+    height: 100%;
     width: calc(100% - 60px);
     margin: 30px;
 
-    // .img-article {
-    //     height: 100%;
-    //     width: 40%;
-    //     background-color: red;
+    .image {
+        flex: 0 0 40%;
+        /* Maintain 40% width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        .image {
-            // height: 50px;
-            // width: 50px;
-            height: 100px;
-            width: 100px;
-            display: flex;
-            align-self: center;
-            height: 40%;
-
-            img {
-                 height: 100%;
-                 width: 100%;
-                // width: 100%; // Ensure the image covers the container width
-                // height: 100%; // Ensure the image covers the container height
-                // object-fit: cover; // Maintains aspect ratio and fills the container
-                // object-position: center; 
-            }
-        // }
+        img {
+            max-width: 100%;
+            /* Prevents overflow horizontally */
+            max-height: 100%;
+            /* Prevents overflow vertically */
+            width: auto;
+            /* Maintain aspect ratio */
+            height: auto;
+            /* Maintain aspect ratio */
+            object-fit: cover;
+            /* Ensures consistent cropping */
+            object-position: center;
+            /* Centers the image within its container */
+        }
     }
 
     .info {
-        height: 100%;
-        background-color: burlywood;
-        width: 60%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 120px);
+        margin: 0 40px;
 
         .title {
-            background-color: aqua;
             width: 100%;
-            height: 20px;
+            height: 36px;
+            font-size: 24px !important;
+            line-height: 32px !important;
+        }
+
+        .price {
+            font-size: 28px;
+            height: 34px;
+            margin-left: 10px;
+            display: flex;
+            margin-right: auto;
+        }
+
+        .description {
+            width: 70%;
+            margin-right: auto;
+        }
+
+        .actions {
+
+            margin-right: auto;
+
+            .rate {
+                height: 50px;
+                .star-rating {
+                    display: flex;
+                    align-items: center;
+
+                    mat-icon {
+                        font-size: 24px;
+                        color: #ccc;
+                        /* Default star color */
+
+                        &.filled {
+                            color: #ffcc00;
+                            /* Highlighted star color */
+                        }
+                    }
+                    span{
+                        height: 30px;
+                    }
+                }
+
+            }
         }
     }
 }

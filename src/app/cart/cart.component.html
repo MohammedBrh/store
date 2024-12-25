@@ -1,6 +1,6 @@
 <div class="main">
-    <div class="body">
-        <div *ngFor="let item of items" class="item" >  
+    <div class="body" *ngIf="items.length !== 0">
+        <div *ngFor="let item of items" class="item">
             <div class="elment">
                 <div class="image"><img src="{{item.image}}" alt=""></div>
                 <div class="title"> <b>{{item.name}}</b></div>
@@ -9,5 +9,12 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="cart-container" *ngIf="items.length === 0">
 
+        <div class="empty-cart">
+            <mat-icon fontIcon="shopping_cart"></mat-icon>
+            <p>Your cart is empty</p>
+        </div>
+
+    </div>
+</div>

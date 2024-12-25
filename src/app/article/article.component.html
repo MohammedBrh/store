@@ -1,12 +1,29 @@
 <div class="main">
     <!-- <div class="img-article"> -->
-        <div class="image"><img src="{{item.image}}" alt=""></div>
+    <div class="image"><img src="{{item.image}}" alt=""></div>
     <!-- </div> -->
     <div class="info">
         <div class="title"> {{item.name}}</div>
+        <div class="price">{{item.price}} <span appAddCurrency="$"></span></div>
         <div class="description"> {{item.description}}</div>
         <div class="actions">
-            <div class="rate"> {{item.rating}}</div>
+            <div class="rate">
+                {{item.rating}}
+                <div class="star-rating">
+                    <!-- <mat-icon *ngFor="let filled of stars" [ngClass]="{ 'filled': filled }">
+                        {{ filled ? 'star' : 'star_outline' }}
+                    </mat-icon> -->
+                    <span *ngFor="let filled of stars">
+                        <!-- {{ filled ? `<i class="fa-solid fa-star"></i>` : `<i class="fa-regular fa-star"></i>` }} -->
+                        <!-- <i class="fa-solid fa-star"></i> -->
+                        <!-- <i class="fa-regular fa-star"></i> -->
+
+                        <mat-icon aria-label="Example star icon" fontIcon="{{ filled ? 'star' : 'star_outline' }}" [ngClass]="{ 'filled': filled }"></mat-icon>
+                        
+                        <!-- <i class="{{ filled ? 'fa-solid' : 'fa-regular' }} fa-star" style="color: #000000;"></i> -->
+                    </span>
+                </div>
+            </div>
             <div class="add"> <button (click)="Add(item.id)">Add</button></div>
         </div>
     </div>
