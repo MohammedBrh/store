@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject  } from '@angular/core';
+import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-snack-bar',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./snack-bar.component.scss']
 })
 export class SnackBarComponent {
-
+  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: { message: string }) {
+    setTimeout(() => {
+      debugger;
+      
+    }, 1000);
+  }
 }

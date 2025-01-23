@@ -33,7 +33,8 @@ export class ContactComponent {
 
   openSnackBar() {
     this._snackBar.openFromComponent(SnackBarComponent, {
-      duration: this.durationInSeconds * 1000,
+      data: { message: 'Demande de contact envoyée avec succès' }, 
+      duration: this.durationInSeconds * 1000
     });
   }
 }
