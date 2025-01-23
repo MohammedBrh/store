@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject } from 'rxjs';
 import { inject } from '@angular/core';
 import { Item } from 'src/interfaces/item';
-import { products } from 'src/mockData';
 import { SnackBarComponent } from 'src/app/snack-bar/snack-bar.component';
 
 @Injectable({
@@ -34,29 +33,29 @@ export class CarteService {
      if (existingItemIndex >= 0) {
       currentItems[existingItemIndex].quantity = (currentItems[existingItemIndex].quantity ?? 0) + itemQuantity;
     } else {
-      // Ensure quantity is defined when adding a new item
       currentItems.push({
         ...item,
-        quantity: itemQuantity // Use the default or provided quantity
+        quantity: itemQuantity // Use the provided quantity
       });
       
+    // Update the cart items and notify listeners
+    this.cartItemsSubject.next([...currentItems]);
     this._snackBar.openFromComponent(SnackBarComponent, {
       data: { message: 'L\'article est ajouté dans le panier' }, 
       duration: this.durationInSeconds * 1000,
     });
     }
-     this.cartItemsSubject.next([...currentItems]); // Update the cart items and notify listeners
    }
  }
 
  // Remove an item from the cart
  removeItem(itemId: number): void {
    const currentItems = this.getCartItems().filter(item => item.id !== itemId);
-   this.cartItemsSubject.next([...currentItems]); // Update the cart items and notify listeners
+   this.cartItemsSubject.next([...currentItems]); 
  }
 
  // Clear the cart
  clearCart(): void {
-   this.cartItemsSubject.next([]); // Clear the cart and notify listeners
+   this.cartItemsSubject.next([]); 
  }
 }

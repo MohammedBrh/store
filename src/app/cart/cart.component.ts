@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/interfaces/item';
-import { products } from 'src/mockData';
 import { CarteService } from 'src/service/carte.service';
 
 @Component({
